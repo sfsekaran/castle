@@ -1,0 +1,9 @@
+[user]
+	name = Sathya Sekaran
+	email = sfsekaran@gmail.com
+[core]
+	editor = nano
+[alias]
+	co = checkout
+	br = branch
+	st = status
