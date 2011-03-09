@@ -78,9 +78,15 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; haml-mode
+(load "haml-mode/haml-mode")
+(require 'haml-mode)
 (add-hook 'haml-mode-hook
-					'(lambda ()
-						 (setq indent-tabs-mode nil)))
+          '(lambda ()
+             (setq indent-tabs-mode nil)))
+
+;; js2-mode
+(autoload 'js2-mode "js2-mode/js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;;;; Setup custom file modes
 ;; Rake files are ruby, too, as are gemspecs, rackup files, etc.
