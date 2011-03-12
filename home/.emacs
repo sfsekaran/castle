@@ -40,7 +40,6 @@
 ;; indent-region-mode t
  rng-nxml-auto-validate-flag nil
  nxml-degraded t)
-(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo))
 
 ;; Color theme
 (require 'color-theme)
@@ -87,6 +86,15 @@
 ;; js2-mode
 (autoload 'js2-mode "js2-mode/js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; ruby-mode
+(setq ruby-insert-encoding-magic-comment nil)
+
+;; rhtml-mode
+(add-to-list 'load-path "~/.emacs.d/rhtml/")
+(autoload 'rhtml-mode "rhtml/rhtml-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
 
 ;;;; Setup custom file modes
 ;; Rake files are ruby, too, as are gemspecs, rackup files, etc.

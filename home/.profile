@@ -12,6 +12,9 @@ alias g=git
 #alias sed=gsed
 alias ll="ls -al"
 
+# Colorize prompt
+export PS1="\[\e[34;1m\]\u\[\e[33;1m\]@\[\e[32;1m\]\H\[\e[31;1m\]> \[\e[0m\]"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 ## NGINX ##
