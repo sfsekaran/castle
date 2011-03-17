@@ -64,6 +64,12 @@
 (define-key osx-key-mode-map (kbd "A-]")  'textmate-shift-right)
 (define-key osx-key-mode-map (kbd "A-[") 'textmate-shift-left)
 
+;;;;
+;; Modes
+
+(defun disable-indent-mode ()
+  (setq indent-tabs-mode nil))
+
 ;;;; RSpec-mode
 (load "rspec-mode/rspec-mode")
 (require 'rspec-mode)
@@ -71,7 +77,7 @@
 (add-hook 'rspec-mode-hook '(lambda () (global-set-key (kbd "A-r") 'rspec-verify)))
 (add-hook 'rspec-mode-hook '(lambda () (global-set-key (kbd "A-R") 'rspec-verify-single)))
 
-;; feature-mode
+;; cucumber.el
 (load "cucumber.el/feature-mode")
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
@@ -80,8 +86,7 @@
 (load "haml-mode/haml-mode")
 (require 'haml-mode)
 (add-hook 'haml-mode-hook
-          '(lambda ()
-             (setq indent-tabs-mode nil)))
+          'disable-indent-mode)
 
 ;; js2-mode
 (autoload 'js2-mode "js2-mode/js2-mode" nil t)
