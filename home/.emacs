@@ -138,3 +138,11 @@
 (setq-default tab-width 2)
 ;; Set the "indent level" whatever that is
 (setq-default c-indent-level 2)
+
+
+;;;;
+;; SLIME
+
+(setq inferior-lisp-program "sbcl") ; your Lisp system
+(require 'slime)
+(slime-setup)
